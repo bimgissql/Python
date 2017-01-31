@@ -1,0 +1,7 @@
+Small sample programs to manipulate Redis.
+
+connect.py   - connect to Redis database
+execute.py   - execute Redis command
+flushdb.py   - delete contents of Redis database
+importifc.py - import contents of IFC file to Redis database
+

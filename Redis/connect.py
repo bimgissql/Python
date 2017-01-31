@@ -16,7 +16,7 @@ pool = redis.ConnectionPool(host=redishost, port=redisport, db=redisdb)
 db = redis.Redis(connection_pool=pool)
 
 # Show information
-print('Delete contents of Redis database')
+print('Connect to Redis database')
 print('Redis server   :', redishost)
 print('Redis port     :', redisport)
 print('Redis database :', redisdb)

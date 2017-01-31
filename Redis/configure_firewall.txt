@@ -1,0 +1,4 @@
+ firewall-cmd --add-port=6379/tcp --permanent
+ firewall-cmd --reload
+ 
+ 

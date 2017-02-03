@@ -1,0 +1,5 @@
+Small sample programs to manipulate PostgreSQL.
+
+connect.py   - connect to PostgreSQL database and return basic activity info
+execute.py   - execute SQL query on PostgreSQL database
+

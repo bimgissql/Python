@@ -1,19 +1,16 @@
 import psycopg2
+import yaml
 
-# PostgreSQL host server address
-pghost = '192.168.55.172'
+# Get database connection information from YML file
+with open("database.yml", 'r') as stream:
+    config = yaml.load(stream)
 
-# PostgreSQL port number on host server
-pgport = 5432
-
-# PostgreSQL user
-pguser = 'postgres'
-
-# PostgreSQL password
-pgpassw = 'password'
-
-# Number of database on PostgreSQL server
-pgdb = 'bimdb'
+# Parse connection data	
+pghost = config[':host']
+pgport = config[':port']
+pgdb = config[':dbname']
+pguser = config[':user']
+pgpassw = config[':password']
 
 # PostgreSQL connection pool
 conn = 'host=' + pghost + ' port=' + str(pgport) + ' dbname=' + pgdb + ' user=' + pguser + ' password=' + pgpassw

@@ -1,13 +1,14 @@
 import redis
+import yaml
 
-# Redis host server address
-redishost = '192.168.55.181'
+# Get database connection information from YML file
+with open("redis.yml", 'r') as stream:
+    config = yaml.load(stream)
 
-# Redis port number on host server
-redisport = 6379
-
-# Number of database on Redis server
-redisdb = 0
+# Parse connection data	
+redishost = config[':host']
+redisport = config[':port']
+redisdb = config[':db']
 
 # Name of IFC file to be imported
 ifcfilename = "ifc.ifc"

@@ -15,11 +15,11 @@ gdbpassw = config[':password']
 
 # Show information
 print('Connect to Neo4j database')
-print('Neo4j server   :', pghost)
-print('Neo4j port     :', str(pgport))
+print('Neo4j server   :', gdbhost)
+print('Neo4j port     :', str(gdbport))
 
 # connection
-driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("test", "test"))
+driver = GraphDatabase.driver("bolt://" + gdbhost + ":" + str(gdbport), auth=basic_auth(gdbuser, gdbpassw))
 
 # session
 session = driver.session()
